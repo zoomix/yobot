@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
+gem 'capistrano'
+
 gem 'eventmachine'
 gem 'em-http-request'
 gem 'firering'
