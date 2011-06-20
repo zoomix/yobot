@@ -25,7 +25,9 @@ task :run do
   bot = Yobot::Bot.new [
     Yobot::Behaviors::PingPong.new, 
     Yobot::Behaviors::Dict.new, 
-    Yobot::Behaviors::Xkcd.new
+    Yobot::Behaviors::Xkcd.new,
+    Yobot::Behaviors::ImageMe.new
+    Yobot::Behaviors::Meme.new
   ]
   
   EM.run do
