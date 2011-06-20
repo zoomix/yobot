@@ -7,7 +7,7 @@ class Yobot::Behaviors::ImageMe
 
   def react(room, message)
     if message =~ COMMAND
-      room.text(random_url(message.gsub(COMMAND, '')))
+      room.text(random_url(message.gsub(COMMAND, ''))) {}
     end
   end
   

@@ -26,8 +26,9 @@ task :run do
     Yobot::Behaviors::PingPong.new, 
     Yobot::Behaviors::Dict.new, 
     Yobot::Behaviors::Xkcd.new,
-    Yobot::Behaviors::ImageMe.new
-    Yobot::Behaviors::Meme.new
+    Yobot::Behaviors::ImageMe.new,
+    Yobot::Behaviors::Meme.new,
+    Yobot::Behaviors::Lolcats.new
   ]
   
   EM.run do

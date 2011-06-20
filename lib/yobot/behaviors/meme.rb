@@ -2,7 +2,7 @@ class Yobot::Behaviors::Meme
   
   def react(room, message)
     if message =~ /^meme/
-      room.text(meme(message.gsub('meme ', '')
+      room.text(meme(message.gsub('meme ', ''))) {}
     end
   end
 
@@ -11,10 +11,10 @@ class Yobot::Behaviors::Meme
     args.reject! {|x| x.strip! ; x.empty? }
 
     begin
-      msg.speak Meme.run args
+      Meme.run args
     rescue Timeout::Error
       # TODO: maybe retry w/ configurable limits?
-      msg.speak "** memegenerator.net has timed out. please try again later **"
+      "** memegenerator.net has timed out. please try again later **"
     end
   end
 end
