@@ -42,6 +42,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  em-http-request
   eventmachine
   firering
   heroku
