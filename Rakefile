@@ -22,13 +22,16 @@ task :run do
     c.max_retries = 10 # default to -1, which means perform connection retries on drop forever.
   end
 
-  bot = Yobot::Bot.new [Yobot::Behaviors::PingPong.new, Yobot::Behaviors::Dict.new, Yobot::Behaviors::Anaveda.new]
+  bot = Yobot::Bot.new [
+    Yobot::Behaviors::PingPong.new, 
+    Yobot::Behaviors::Dict.new, 
+    Yobot::Behaviors::Xkcd.new
+  ]
   
   EM.run do
     conn.authenticate do |user|
       conn.rooms do |rooms|
         rooms.each do |room|
-          room.text('Hello World') {}
           room.stream do |message|
             if message.type == 'TextMessage'
               bot.received_message room, message.body

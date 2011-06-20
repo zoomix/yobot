@@ -10,7 +10,9 @@ require "bundler/setup"
 
 require 'firering'
 require 'json'
+require 'nokogiri'
+
 require 'yobot/bot'
 require 'yobot/behaviors/ping_pong'
 require 'yobot/behaviors/dict'
-require 'yobot/behaviors/anaveda'
+require 'yobot/behaviors/xkcd'
