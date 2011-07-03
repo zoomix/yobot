@@ -3,7 +3,7 @@ class Yobot::Behaviors::QRCode
   BASE_URL = 'http://qrcode.kaywa.com/img.php?s=8&d='
   
   def describe
-    '- I can create a QR-Code for you if you go mrdata, qrcode <message>'
+    '- I can create a QR-Code for you if you go mrdata, qrcode or mrdata, qrcode <message>'
   end
   
   def react(room, message)
