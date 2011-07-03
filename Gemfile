@@ -11,6 +11,7 @@ gem 'nokogiri'
 
 gem 'googleajax'
 gem 'meme'
+gem 'terminal-table'
 
 group :development do
   gem 'rspec', '>=2.0'

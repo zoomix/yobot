@@ -1,6 +1,10 @@
 class Yobot::Behaviors::Xkcd
   BASE_URL = 'http://xkcd.com/'
   RANDOM_URL = 'http://dynamic.xkcd.com/random/comic/'
+
+  def describe()
+    '- I can entertain you by showing you xkcds. Go mrdata, xkcd or xkcd random or xkcd 312'
+  end
   
   def react(room, message)
     if message =~ /^xkcd$/ || message =~ /^xkcd latest/

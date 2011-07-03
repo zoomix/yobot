@@ -1,4 +1,8 @@
 class Yobot::Behaviors::Dict
+  def describe
+    '- I can translate words for you. Just go: MrData translate awesome to sv'
+  end
+  
   def react(room, message)
     if message =~ /^translate/
       request = EventMachine::HttpRequest.new('https://ajax.googleapis.com/ajax/services/language/translate')

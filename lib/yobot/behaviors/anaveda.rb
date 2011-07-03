@@ -1,6 +1,11 @@
 require 'nokogiri'
 
 class Yobot::Behaviors::Anaveda
+
+  def describe
+    ''
+  end
+
   def react(room, message)
     if message =~ /^anaveda/
       http = EventMachine::HttpRequest.new('http://www.anaveda.de/neu/mittagstisch/').get
