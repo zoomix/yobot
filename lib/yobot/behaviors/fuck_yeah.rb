@@ -2,7 +2,7 @@ class Yobot::Behaviors::FuckYeah
   BASE_URL = 'http://fuckyeahnouns.com/images/'
   
   def describe
-    '- I can share your enthusiasm if you scream fuck yeah!'
+    '- I can share your enthusiasm if you scream fuck yeah <keywords>'
   end
   
   def react(room, message)
