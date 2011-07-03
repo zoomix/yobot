@@ -16,6 +16,15 @@ describe Yobot::Behaviors::Xkcd do
     Yobot::Behaviors::Xkcd.new.react(room, 'xkcd')
   end
   
+  it "writes latest image url if prompted with xkcd find ballmer" do
+    room = stub(:room)
+
+    xkcd = Yobot::Behaviors::Xkcd.new
+    xkcd.should_receive(:fetch_comic).with(room, '323')
+    
+    xkcd.react(room, 'xkcd find ballmer')
+  end
+  
   it "does nothing if message doesn't start with xkcd" do
     room = stub(:room)
     
@@ -28,6 +37,115 @@ describe Yobot::Behaviors::Xkcd do
   class Yobot::Behaviors::Xkcd
     def fetch_comic(room, id=nil)
       parse_comic(room, html_comic)
+    end
+    
+    def get_search_html(search_word)
+      <<SEARCHHTML
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+              "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+      <head>
+
+      	<title>Unofficial XKCD Search - Quick Comic Searcher</title>
+
+      	<link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+
+      	<script src="js/prototype.js" type="text/javascript"></script>
+      	<script src="js/scriptaculous.js?load=effects,builder" type="text/javascript"></script>
+      	<script src="js/lightbox.js" type="text/javascript"></script>
+
+      	<style type="text/css">
+      		body{ color: #333; font: 13px 'Lucida Grande', Verdana, sans-serif;	}
+      	</style>
+
+      </head>
+      <body>
+
+      <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-86859-16']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+        })();
+
+      </script>
+
+      <div style="float:right">
+      <script type="text/javascript"><!--
+      google_ad_client = "pub-2595687861356859";
+      /* derp.co.uk/xkcd */
+      google_ad_slot = "1560625525";
+      google_ad_width = 468;
+      google_ad_height = 60;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </div>
+
+      <h2 style="margin-bottom:5px;">XKCD Search</h2>
+      <div style="padding-bottom:5px; border-bottom: 1px solid #CCC;">
+      <b style="color: #555;">View Mode:</b>
+      <a href="gallery" style="color:blue;"><b>Gallery Mode</b></a> | <b>Standard Mode</b><br />
+      </div>
+
+      <small>Unofficial <a href="http://www.xkcd.com/">XKCD WebComic</a> Search. All the WebComics from the <a href="http://www.xkcd.com/">incredibly awesome XKCD.com</a></small>.
+
+
+      <br style="clear:right;">
+
+      	<table cellpadding=20 border=0>
+      	<tr><td nowrap align="center">
+                      <form method="GET" action="/xkcd/page">
+      		<input type="text" name="q" value="ballmer">
+      		<input type="submit" name="search" value="Search">
+      		</form>
+      	</td><td align="center">
+      	</td></tr>
+
+      	</table>
+      0 results found, showing 10 results from page 0:<br><br>
+
+      	<table>
+
+
+      	<tr>
+      		<td><a href="comics/ballmer_peak.png" rel="lightbox[xkcd]" title="Ballmer Peak - Apple uses automated schnapps IVs."><img src="thumb.php?fn=ballmer_peak.png"></a></td>
+      		<td><b>Ballmer Peak</b><br>Apple uses automated schnapps IVs.<br>
+      			<a target="_blank" href="http://www.xkcd.com/323/">http://www.xkcd.com/323/</a></td>
+
+      	</tr>		
+              <table cellpadding=20 border=0>
+              <tr><td nowrap align="center">
+                      <form method="GET" action="/xkcd/page">
+                      <input type="text" name="q" value="ballmer">
+                      <input type="submit" name="search" value="Search">
+                      </form>
+              </td><td align="center">
+              </td></tr>
+
+              </table>
+      </table>
+      <br />
+      <div align="center">
+      <small>All the comics shown 
+      are by the incredibly awesome <a href="http://www.xkcd.com/"><b>XKCD.com</b></a>
+      who licences <a href="http://creativecommons.org/licenses/by-nc/2.5/">
+      under a Creative Commons Attribution-NonCommercial 2.5 License</a> which nicely allows us to do this :)
+      <br />
+      Search system thrown together by <a href="http://www.frag.co.uk/">frag.co.uk</a> using <a href="http://www.mysql.com/">MySQL</a>, <a href="http://www.gentoo.org/">Gentoo</a> and a struggling <a href="http://www.kimsufi.co.uk/">Kimsufi Box</a>.<br />
+
+      <a href="/">Have you seen our pastebin/imagebin?</a></small>
+      </div>
+      </body>
+      </html>
+SEARCHHTML
     end
 
     def html_comic
