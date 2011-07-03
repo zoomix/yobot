@@ -25,3 +25,5 @@ require 'yobot/behaviors/anaveda'
 require 'yobot/behaviors/fuck_yeah'
 require 'yobot/behaviors/status_report'
 require 'yobot/behaviors/vasttrafik'
+require 'yobot/behaviors/qr_code'
+
