@@ -25,5 +25,8 @@ require 'yobot/behaviors/anaveda'
 require 'yobot/behaviors/fuck_yeah'
 require 'yobot/behaviors/status_report'
 require 'yobot/behaviors/vasttrafik'
+require 'yobot/behaviors/vasttrafik_base'
+require 'yobot/behaviors/vasttrafik_to_destination'
+require 'yobot/behaviors/vasttrafik_from_destination'
 require 'yobot/behaviors/qr_code'
 
