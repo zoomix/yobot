@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:gaiottino/time_travel.git
+  revision: 6101ff289e4b2d77cafb6a59f25ef7144d841ac5
+  specs:
+    time_travel (0.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -72,3 +78,4 @@ DEPENDENCIES
   rake
   rspec (>= 2.0)
   terminal-table
+  time_travel!

@@ -13,6 +13,8 @@ gem 'googleajax'
 gem 'meme'
 gem 'terminal-table'
 
+gem 'time_travel', :git => 'git@github.com:gaiottino/time_travel.git'
+
 group :development do
   gem 'rspec', '>=2.0'
   gem 'rake'
