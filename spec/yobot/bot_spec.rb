@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Yobot::Bot, 'on_message' do
 
-  datas = ["MrData", "mrdata", "mr data", "Mr data", "Mr Data", "Mr. Data", "Mr.data", "Mr data, "]
+  datas = ["MrData", "mrdata", "mr data", "Mr data", "Mr Data", "Mr. Data", "Mr.data", "Mr data, ", "Computer", "computer, "]
 
   datas.each do |prefix|
     it "passes the message to all behaviors if it starts with #{prefix}" do

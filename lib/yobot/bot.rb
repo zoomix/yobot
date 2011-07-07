@@ -8,10 +8,10 @@ class Yobot::Bot
   
   def received_message(room, message)
 
-    matchword = message.match(/^mr.*?data.?/i).to_s #Someone is referencing us. Oh joy!
+    matchword = message.match(/^mr.*?data.?(.+)|^computer.?(.+)/i).to_s #Someone is referencing us. Oh joy!
 
     if matchword.length > 0
-      message = message[(matchword.length)..-1].strip
+      message = ($1 || $2).strip
 
       if message.match(/^what do you know/i) or message.match(/^help/i)
 
