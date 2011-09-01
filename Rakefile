@@ -31,6 +31,7 @@ task :run do
                         Yobot::Behaviors::VasttrafikFromDestiantion.new,
                         Yobot::Behaviors::Xkcd.new,
                         Yobot::Behaviors::QRCode.new,
+                        Yobot::Behaviors::Cowsay.new,
                         Yobot::Behaviors::FuckYeah.new]
   
   EM.run do

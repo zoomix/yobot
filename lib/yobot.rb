@@ -28,4 +28,5 @@ require 'yobot/behaviors/vasttrafik_base'
 require 'yobot/behaviors/vasttrafik_to_destination'
 require 'yobot/behaviors/vasttrafik_from_destination'
 require 'yobot/behaviors/qr_code'
-
+require 'yobot/behaviors/captains_log'
+require 'yobot/behaviors/cowsay'

@@ -27,7 +27,7 @@ class Yobot::Behaviors::VasttrafikFromDestiantion < Yobot::Behaviors::Vasttrafik
   
   def react(room, message)
     if message.match(/^beam me up from (.+)|from (.+)/i)
-      routes = get_route_from(find_station_id($1))
+      routes = get_route_from(find_station_id($1 || $2))
       room.paste(routes.reduce('') {|acc,val|  acc << val << "\n"}) {}
     end
   end

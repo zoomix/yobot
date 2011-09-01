@@ -4,6 +4,13 @@ GIT
   specs:
     time_travel (0.1.0)
 
+GIT
+  remote: git@github.com:quirkey/GDocs4Ruby.git
+  revision: 6feca6203dc92cf6967e06ad4d4d0386cfa57db1
+  specs:
+    gdocs4ruby (0.1.1)
+      gdata4ruby (>= 0.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -26,6 +33,7 @@ GEM
       em-http-request (~> 0.3.0)
       eventmachine (~> 0.12.10)
       yajl-ruby (~> 0.7.6)
+    gdata4ruby (0.1.5)
     googleajax (1.0.1)
       json (>= 1.0.0)
     heroku (2.2.4)
@@ -70,6 +78,7 @@ DEPENDENCIES
   em-http-request
   eventmachine
   firering
+  gdocs4ruby!
   googleajax
   heroku
   json

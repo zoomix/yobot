@@ -8,11 +8,11 @@ gem 'firering'
 
 gem 'json'
 gem 'nokogiri'
+gem 'gdocs4ruby', :git => 'git@github.com:quirkey/GDocs4Ruby.git'
 
 gem 'googleajax'
 gem 'meme'
 gem 'terminal-table'
-
 gem 'time_travel', :git => 'git@github.com:gaiottino/time_travel.git'
 
 group :development do
