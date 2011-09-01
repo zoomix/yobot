@@ -4,7 +4,7 @@ class Yobot::Behaviors::Cowsay
   end
   
   def react(room, message)
-    return room.paste(%x(cowsay #{$1})) if message.match(/^cowsay (.+)/i)
+    return room.paste(%x(cowsay #{$1})) {} if message.match(/^cowsay (.+)/i)
     # room.text('pong') {} if message == 'ping'
   end
 end
